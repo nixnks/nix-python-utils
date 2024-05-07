@@ -4,7 +4,7 @@ from functools import wraps
 from logging import Logger
 
 
-def thread_pool(num_threads=4, exceptions=Exception, raise_first_exception=False, logger: Logger = None) -> List[Any]:
+def thread_pool(num_threads=4, exceptions=Exception, raise_first_exception=False, logger: Logger = None):
     """
     A decorator that runs a function in a thread pool.
 
@@ -19,7 +19,7 @@ def thread_pool(num_threads=4, exceptions=Exception, raise_first_exception=False
         logger (Logger, optional): The logger to use for logging exceptions. Defaults to None.
 
     Returns:
-        List[Any]: The results of all tasks in the thread pool.
+         Callable: A decorated function that handles exceptions according to the provided parameters.
     """
 
     def decorator(func):
